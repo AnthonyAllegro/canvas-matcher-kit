@@ -50,8 +50,8 @@ export function MainScreen() {
       return;
     }
     const id = setTimeout(() => {
-      const s = script[step];
-      setLogs((l) => [...l, { ...s, t: now() }]);
+      const s = script[step]!;
+      setLogs((l) => [...l, { kind: s.kind, msg: s.msg, t: now() }]);
       if (s.modal) setModal(true);
       setStep((x) => x + 1);
     }, 550);
